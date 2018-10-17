@@ -1,7 +1,7 @@
 # Welcome to the Ptut about Augmented Reality
 # Contibutors : Benklifa, Grillet-Kissling, Huyghues, Rameau
 # Les étapes pour utiliser git : (Ne pas oublier de ce déplacer vers le dossier du git avec des cd) :
-# ATTENTION : AVANT D'APPORTER TOUTES MODIFICATION SUR LE CODE IL FAUT : git pull dans le bon dossier;
+# ATTENTION : AVANT D'APPORTER TOUTES MODIFICATION SUR LE CODE IL FAUT : git pull (verifiez que votre pull a marché en consultant l'onglet pull request dans git);
 # 1: Git checkout -b "NomDeLaBranche" (Crée une branche locale, Attention les noms (local et distant) doivent correspondre);
 # 2: Git checkout "NomDeLaBranche" (Selectionne le branche que vous voulez modifier);
 # 3: Git add * (Ajoute toutes les modifications apportés)
