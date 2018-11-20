@@ -8,7 +8,7 @@
 #
 #
 # Les étapes pour utiliser git : (Ne pas oublier de ce déplacer vers le dossier du git avec des cd) :
-# 1: Git checkout -b "(NomDuModule)_(Stable)";
+# 1: Git checkout -b "(NomDuModule)";
 # 2: Git checkout "NomDelaBranche (Si déja Crée);
 # ATTENTION : AVANT D'APPORTER TOUTES MODIFICATION SUR LE CODE IL FAUT : git pull origin "NomDeLaBranche";
 # MODIFIEZ OU AJOUTEZ VOS FICHIERS;
