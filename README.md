@@ -1,4 +1,4 @@
-# Here are all classes required for the moment
+# Welcome
 # Contibutors : Benklifa, Grillet-Kissling, Huyghues, Rameau
 #
 # Les étapes pour utiliser git : (Ne pas oublier de ce déplacer vers le dossier du git avec des cd) :
