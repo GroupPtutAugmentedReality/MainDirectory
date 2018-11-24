@@ -1,4 +1,5 @@
 # Welcome
+# Link to the trello : https://trello.com/b/YMHrjPWQ/ptut
 # Contibutors : Benklifa, Grillet-Kissling, Huyghues, Rameau
 #
 # Les étapes pour utiliser git : (Ne pas oublier de ce déplacer vers le dossier du git avec des cd) :
