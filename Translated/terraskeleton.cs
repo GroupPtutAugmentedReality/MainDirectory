@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-public class TerraSkeleton
+public class TerraSkeleton : TerraPrimitive
 {	
 	/*!
 	\class TerraSkeleton archestree.h
