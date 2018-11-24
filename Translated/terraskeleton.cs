@@ -13,7 +13,7 @@ public class TerraSkeleton : TerraPrimitive
     \param r Radius.
     \param a Alpha.
     */
-    public TerraSkeleton(/*const*/ ref double r, /*const*/ ref double a)
+    public TerraSkeleton(/*const*/ ref double r, /*const*/ ref double a) /*const*/
 	{
         alpha = a;
         this.r = r;
@@ -24,7 +24,7 @@ public class TerraSkeleton : TerraPrimitive
 	\brief Compute the falloff function.
 	\param d Squared distance to the center.
 	*/
-    public double Alpha(/*const*/ ref double d)
+    public double Alpha(/*const*/ ref double d) /*const*/
     {
         return alpha * Quadric::SmoothCompact(d, r * r);
     }

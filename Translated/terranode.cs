@@ -23,7 +23,7 @@ public class TerraNode
     \param box The box.
     */
 
-    public TerraNod(/*const*/ ref Box2 box)
+    public TerraNode(/*const*/ ref Box2 box)
 	{
         box666 = box;
 	}
@@ -31,7 +31,7 @@ public class TerraNode
     /*!
 	\brief Returns the bouding box of a node.
 	*/
-    public Box2 GetBox()
+    public Box2 GetBox() /*const*/
     {
         return box666;
     }
@@ -41,7 +41,7 @@ public class TerraNode
 	\param p Point.
 	*/
 
-    int Traversal(/*const*/ ref Vector2 p)
+    int Traversal(/*const*/ ref Vector2 p) /*const*/
     {
         return 1;
     }
@@ -52,7 +52,7 @@ public class TerraNode
 	\brief Compute the gradient at a given position.
 	\param p Point.
 	*/
-    Vector2 Gradient(/*const*/ ref Vector2 p)
+    Vector2 Gradient(/*const*/ ref Vector2 p) /*const*/
     {
         double x = Elevation(Vector2(p[0] + epsilon, p[1])) - Elevation(Vector2(p[0] - epsilon, p[1]));
         double y = Elevation(Vector2(p[0], p[1] + epsilon)) - Elevation(Vector2(p[0], p[1] - epsilon));
@@ -66,7 +66,7 @@ public class TerraNode
 	\sa TerraNode::Gradient
 	\param p Point.
 	*/
-    Vector Normal(/*const*/ ref Vector2 p)
+    Vector Normal(/*const*/ ref Vector2 p) /*const*/
     {
         return Normalized(Gradient(p).ToVector(1.0));
     }
@@ -77,7 +77,7 @@ public class TerraNode
 
     \param p Point.
     */
-    ScalarAlpha ElevationAlpha(/*const*/ ref Vector2 p)
+    ScalarAlpha ElevationAlpha(/*const*/ ref Vector2 p) /*const*/
     {
         return ScalarAlpha(0.0, 1.0);
     }
@@ -93,7 +93,7 @@ public class TerraNode
 	\endcode
 	\param p Point.
 	*/
-    double Elevation(/*const*/ ref Vector2 p)
+    double Elevation(/*const*/ ref Vector2 p) /*const*/
     {
         return ElevationAlpha(p).Value();
     }
@@ -103,7 +103,7 @@ public class TerraNode
     /*!
 	\brief Compute the size of a node.
 	*/
-    int Memory()
+    int Memory() /*const*/
 	{
 	return sizeof(TerraNode);
 	}
