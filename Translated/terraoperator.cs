@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class TerraOperator : TerraNode
 {
@@ -67,7 +67,7 @@ public class TerraOperator : TerraNode
 	\brief Compute the size of a node.
 	*/
 
-    public Memory() /*const*/
+    public int Memory() /*const*/
 	{
 		int n = sizeof(TerraBlendGrid);
 		for (int i = 0; i<nodes.size(); i++)
