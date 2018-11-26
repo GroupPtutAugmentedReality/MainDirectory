@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class ArchesTree
 {
@@ -371,7 +371,7 @@ public class ArchesTree
 	/*!
 	\brief Get tree instances.
 	*/
-	int ArchesTree::GetInstancesTree(Vector& p, Random& ra) const
+	int GetInstancesTree(ref Vector p, ref Random ra) /*const*/
 	{
   //ScalarAlpha msa = root->ElevationAlpha(p);
   //// Update p.z information
@@ -403,7 +403,7 @@ public class ArchesTree
 /*!
 \brief \warn
 */
-int ArchesTree::GetInstancesSmallVeg(Vector& p, Random& ra) const
+int GetInstancesSmallVeg(ref Vector p, ref Random ra) /*const*/
 {
   //ScalarAlpha msa = root->ElevationAlpha(p);
   //// Update p.z information
@@ -429,7 +429,7 @@ int ArchesTree::GetInstancesSmallVeg(Vector& p, Random& ra) const
 /*!
 \brief \warn
 */
-void ArchesTree::generateVegetationNode(const Box2& box)
+void generateVegetationNode(/*const*/ ref Box2 box)
 {
 
     QVector<VegetationNode*> VNS1, VNS2;
@@ -446,9 +446,9 @@ void ArchesTree::generateVegetationNode(const Box2& box)
     SimplexTurbulence tutu3;
 
     double tileSize1 = 50.0; // meter
-    for (int i = bx[0] - tileSize1 - int(bx[0]) % int(tileSize1); i < by[0] + tileSize1; i += tileSize1)
+    for (int i = bx[0] - tileSize1 - (int)(bx[0]) % (int)(tileSize1); i < by[0] + tileSize1; i += tileSize1)
     {
-        for (int j = bx[1] - tileSize1 - int(bx[1]) % int(tileSize1); j < by[1] + tileSize1; j += tileSize1)
+        for (int j = bx[1] - tileSize1 - (int)(bx[1]) % (int)(tileSize1); j < by[1] + tileSize1; j += tileSize1)
         {
             for (int k = 0; k < tile.size(); k++)
             {
@@ -467,9 +467,9 @@ void ArchesTree::generateVegetationNode(const Box2& box)
     }
 
     double tileSize2 = 20.0;  // meter
-    for (int i = bx[0] - tileSize2 - int(bx[0]) % int(tileSize2); i < by[0] + tileSize2; i += tileSize2)
+    for (int i = bx[0] - tileSize2 - (int)(bx[0]) % (int)(tileSize2); i < by[0] + tileSize2; i += tileSize2)
     {
-        for (int j = bx[1] - tileSize2 - int(bx[1]) % int(tileSize2); j < by[1] + tileSize2; j += tileSize2)
+        for (int j = bx[1] - tileSize2 - (int)(bx[1]) % (int)(tileSize2); j < by[1] + tileSize2; j += tileSize2)
         {
             for (int k = 0; k < tile.size(); k++)
             {
@@ -485,7 +485,7 @@ void ArchesTree::generateVegetationNode(const Box2& box)
     veg_root = new VegetationBlend(new VegetationBlend(VNS1), new VegetationBlend(VNS2));
 }
 
-void ArchesTree::generateVegetationNodeCanyon(const Box2& box)
+void generateVegetationNodeCanyon(/*const*/ ref Box2 box)
 {
 
     QVector<VegetationNode*> VNS1, VNS2;
@@ -502,9 +502,9 @@ void ArchesTree::generateVegetationNodeCanyon(const Box2& box)
     SimplexTurbulence tutu3;
 
     double tileSize1 = 500.0; // meter
-    for (int i = bx[0] - tileSize1 - int(bx[0]) % int(tileSize1); i < by[0] + tileSize1; i += tileSize1)
+    for (int i = bx[0] - tileSize1 - (int)(bx[0]) % (int)(tileSize1); i < by[0] + tileSize1; i += tileSize1)
     {
-        for (int j = bx[1] - tileSize1 - int(bx[1]) % int(tileSize1); j < by[1] + tileSize1; j += tileSize1)
+        for (int j = bx[1] - tileSize1 - (int)(bx[1]) % (int)(tileSize1); j < by[1] + tileSize1; j += tileSize1)
         {
             for (int k = 0; k < tile.size(); k++)
             {
@@ -523,9 +523,9 @@ void ArchesTree::generateVegetationNodeCanyon(const Box2& box)
     }
 
     double tileSize2 = 500.0;  // meter
-    for (int i = bx[0] - tileSize2 - int(bx[0]) % int(tileSize2); i < by[0] + tileSize2; i += tileSize2)
+    for (int i = bx[0] - tileSize2 - (int)(bx[0]) % (int)(tileSize2); i < by[0] + tileSize2; i += tileSize2)
     {
-        for (int j = bx[1] - tileSize2 - int(bx[1]) % int(tileSize2); j < by[1] + tileSize2; j += tileSize2)
+        for (int j = bx[1] - tileSize2 - (int)(bx[1]) % (int)(tileSize2); j < by[1] + tileSize2; j += tileSize2)
         {
             for (int k = 0; k < tile.size(); k++)
             {
@@ -544,7 +544,7 @@ void ArchesTree::generateVegetationNodeCanyon(const Box2& box)
 /*!
 \brief \warn Create a MayaInstanceAll (Vegetation)
 */
-MayaInstanceAll ArchesTree::GetVegetation(const Box2& box, bool use_cam) const
+MayaInstanceAll GetVegetation(/*const*/ ref Box2 box, bool use_cam) /*const*/
 {
   Random randomTree;
 Random randomScale;
