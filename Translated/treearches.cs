@@ -97,8 +97,8 @@ public class ArchesTree
 	{
 		// Colors
 		Vector col_sand = Vector(0.7, 0.7, 0.0);
-		Vector col_rock = Vector(91. / 255., 59. / 255., 17. / 255.);
-		Vector col_water = Vector(30. / 255., 30. / 255., 150. / 255.);
+		Vector col_rock = Vector(91.0 / 255.0, 59.0/ 255.0, 17.0/ 255.0);
+		Vector col_water = Vector(30.0 / 255.0, 30.0 / 255.0, 150.0 / 255.0);
 
 		ScalarAlpha mB = bedrock->ElevationAlpha(p);
 		ScalarAlpha mW = water->ElevationAlpha(p);
@@ -147,7 +147,7 @@ public class ArchesTree
 		ScalarAlpha msaMiddleBedrock;
 		ScalarAlpha msaMiddleWater;
 		do {
-			middle = (start + end) / 2.;
+			middle = (start + end) / 2.0;
 			msaMiddleBedrock = bedrock->ElevationAlpha(middle);
 			msaMiddleWater = water->ElevationAlpha(middle);
 
@@ -193,167 +193,170 @@ public class ArchesTree
 		// Sur la terre
 		if (maW.Value() <= maB.Value() && mbW.Value() <= mbB.Value() && mcW.Value() <= mcB.Value())
 		{
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 		}
 		// Sous l'eau
 		else if (maW.Value() > maB.Value() && mbW.Value() > mbB.Value() && mcW.Value() > mcB.Value())
 		{
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 			count += 3;
-			triangleWater.append(a + Vector(0., 0., maW.Value()));
-			triangleWater.append(b + Vector(0., 0., mbW.Value()));
-			triangleWater.append(c + Vector(0., 0., mcW.Value()));
+			triangleWater.append(a + Vector(0.0, 0.0, maW.Value()));
+			triangleWater.append(b + Vector(0.0, 0.0, mbW.Value()));
+			triangleWater.append(c + Vector(0.0, 0.0, mcW.Value()));
 		}
 		else if (maW.Value() > maB.Value() && mbW.Value() <= mbB.Value() && mcW.Value() <= mcB.Value())
 		{
-			Vector ab = dichotomie(a + Vector(0., 0., maB.Value()), b + Vector(0., 0., mbB.Value()), maW.Value() - maB.Value(), mbW.Value() - mbB.Value());
-			Vector ac = dichotomie(a + Vector(0., 0., maB.Value()), c + Vector(0., 0., mcB.Value()), maW.Value() - maB.Value(), mcW.Value() - mcB.Value());
+			Vector ab = dichotomie(a + Vector(0.0, 0.0, maB.Value()), b + Vector(0.0, 0.0, mbB.Value()), maW.Value() - maB.Value(), mbW.Value() - mbB.Value());
+			Vector ac = dichotomie(a + Vector(0.0, 0.0, maB.Value()), c + Vector(0.0, 0.0, mcB.Value()), maW.Value() - maB.Value(), mcW.Value() - mcB.Value());
 
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
 			triangleTerrain.append(ab);
 			triangleTerrain.append(ac);
 
 			triangleTerrain.append(ab);
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 
 			triangleTerrain.append(ab);
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 			triangleTerrain.append(ac);
 
 			count += 3;
-			triangleWater.append(a + Vector(0., 0., maW.Value()));
+			triangleWater.append(a + Vector(0.0, 0.0, maW.Value()));
 			triangleWater.append(ab);
 			triangleWater.append(ac);
 		}
 		else if (maW.Value() <= maB.Value() && mbW.Value() > mbB.Value() && mcW.Value() <= mcB.Value())
 		{
-			Vector ba = dichotomie(b + Vector(0., 0., mbB.Value()), a + Vector(0., 0., maB.Value()), mbW.Value() - mbB.Value(), maW.Value() - maB.Value());
-			Vector bc = dichotomie(b + Vector(0., 0., mbB.Value()), c + Vector(0., 0., mcB.Value()), mbW.Value() - mbB.Value(), mcW.Value() - mcB.Value());
+			Vector ba = dichotomie(b + Vector(0.0, 0.0, mbB.Value()), a + Vector(0.0, 0.0, maB.Value()), mbW.Value() - mbB.Value(), maW.Value() - maB.Value());
+			Vector bc = dichotomie(b + Vector(0.0, 0.0, mbB.Value()), c + Vector(0.0, 0.0, mcB.Value()), mbW.Value() - mbB.Value(), mcW.Value() - mcB.Value());
 
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
 			triangleTerrain.append(bc);
 			triangleTerrain.append(ba);
 
 			triangleTerrain.append(bc);
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
 
 			triangleTerrain.append(bc);
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
 			triangleTerrain.append(ba);
 
 			count += 3;
-			triangleWater.append(b + Vector(0., 0., mbW.Value()));
+			triangleWater.append(b + Vector(0.0, 0.0, mbW.Value()));
 			triangleWater.append(bc);
 			triangleWater.append(ba);
 		}
 		else if (maW.Value() <= maB.Value() && mbW.Value() <= mbB.Value() && mcW.Value() > mcB.Value())
 		{
-			Vector ca = dichotomie(c + Vector(0., 0., mcB.Value()), a + Vector(0., 0., maB.Value()), mcW.Value() - mcB.Value(), maW.Value() - maB.Value());
-			Vector cb = dichotomie(c + Vector(0., 0., mcB.Value()), b + Vector(0., 0., mbB.Value()), mcW.Value() - mcB.Value(), mbW.Value() - mbB.Value());
+			Vector ca = dichotomie(c + Vector(0.0, 0.0, mcB.Value()), a + Vector(0.0, 0.0, maB.Value()), mcW.Value() - mcB.Value(), maW.Value() - maB.Value());
+			Vector cb = dichotomie(c + Vector(0.0, 0.0, mcB.Value()), b + Vector(0.0, 0.0, mbB.Value()), mcW.Value() - mcB.Value(), mbW.Value() - mbB.Value());
 
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 			triangleTerrain.append(ca);
 			triangleTerrain.append(cb);
 
 			triangleTerrain.append(ca);
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
 
 			triangleTerrain.append(ca);
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
 			triangleTerrain.append(cb);
 
 			count += 3;
-			triangleWater.append(c + Vector(0., 0., mcW.Value()));
+			triangleWater.append(c + Vector(0.0, 0.0, mcW.Value()));
 			triangleWater.append(ca);
 			triangleWater.append(cb);
 		}
 		else if (maW.Value() <= maB.Value() && mbW.Value() > mbB.Value() && mcW.Value() > mcB.Value())
 		{
-			Vector ab = dichotomie(a + Vector(0., 0., maB.Value()), b + Vector(0., 0., mbB.Value()), maW.Value() - maB.Value(), mbW.Value() - mbB.Value());
-			Vector ac = dichotomie(a + Vector(0., 0., maB.Value()), c + Vector(0., 0., mcB.Value()), maW.Value() - maB.Value(), mcW.Value() - mcB.Value());
+			Vector ab = dichotomie(a + Vector(0.0, 0.0, maB.Value()), b + Vector(0.0, 0.0, mbB.Value()), maW.Value() - maB.Value(), mbW.Value() - mbB.Value());
+			Vector ac = dichotomie(a + Vector(0.0, 0.0, maB.Value()), c + Vector(0.0, 0.0, mcB.Value()), maW.Value() - maB.Value(), mcW.Value() - mcB.Value());
 
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
 			triangleTerrain.append(ab);
 			triangleTerrain.append(ac);
 
 			triangleTerrain.append(ab);
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 
 			triangleTerrain.append(ab);
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 			triangleTerrain.append(ac);
 
 			count += 3;
 			count += 3;
 			triangleWater.append(ab);
-			triangleWater.append(b + Vector(0., 0., mbW.Value()));
-			triangleWater.append(c + Vector(0., 0., mcW.Value()));
+			triangleWater.append(b + Vector(0.0, 0.0, mbW.Value()));
+			triangleWater.append(c + Vector(0.0, 0.0, mcW.Value()));
 
 			triangleWater.append(ab);
-			triangleWater.append(c + Vector(0., 0., mcW.Value()));
+			triangleWater.append(c + Vector(0.0, 0.0, mcW.Value()));
 			triangleWater.append(ac);
 		}
 		else if (maW.Value() > maB.Value() && mbW.Value() <= mbB.Value() && mcW.Value() > mcB.Value())
 		{
-			Vector ba = dichotomie(b + Vector(0., 0., mbB.Value()), a + Vector(0., 0., maB.Value()), mbW.Value() - mbB.Value(), maW.Value() - maB.Value());
-			Vector bc = dichotomie(b + Vector(0., 0., mbB.Value()), c + Vector(0., 0., mcB.Value()), mbW.Value() - mbB.Value(), mcW.Value() - mcB.Value());
+			Vector ba = dichotomie(b + Vector(0.0, 0.0, mbB.Value()), a + Vector(0.0, 0.0, maB.Value()), mbW.Value() - mbB.Value(), maW.Value() - maB.Value());
+			Vector bc = dichotomie(b + Vector(0.0, 0.0, mbB.Value()), c + Vector(0.0, 0.0, mcB.Value()), mbW.Value() - mbB.Value(), mcW.Value() - mcB.Value());
 
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
 			triangleTerrain.append(bc);
 			triangleTerrain.append(ba);
 
 			triangleTerrain.append(bc);
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
 
 			triangleTerrain.append(bc);
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
 			triangleTerrain.append(ba);
 
+            /**
+             * TODO:verifier utilié
+             **/
 			count += 3;
 			count += 3;
 			triangleWater.append(bc);
-			triangleWater.append(c + Vector(0., 0., mcW.Value()));
-			triangleWater.append(a + Vector(0., 0., maW.Value()));
+			triangleWater.append(c + Vector(0.0, 0.0, mcW.Value()));
+			triangleWater.append(a + Vector(0.0, 0.0, maW.Value()));
 
 			triangleWater.append(bc);
-			triangleWater.append(a + Vector(0., 0., maW.Value()));
+			triangleWater.append(a + Vector(0.0, 0.0, maW.Value()));
 			triangleWater.append(ba);
 
 		}
 		else if (maW.Value() > maB.Value() && mbW.Value() > mbB.Value() && mcW.Value() <= mcB.Value())
 		{
-			Vector ca = dichotomie(c + Vector(0., 0., mcB.Value()), a + Vector(0., 0., maB.Value()), mcW.Value() - mcB.Value(), maW.Value() - maB.Value());
-			Vector cb = dichotomie(c + Vector(0., 0., mcB.Value()), b + Vector(0., 0., mbB.Value()), mcW.Value() - mcB.Value(), mbW.Value() - mbB.Value());
+			Vector ca = dichotomie(c + Vector(0.0, 0.0, mcB.Value()), a + Vector(0.0, 0.0, maB.Value()), mcW.Value() - mcB.Value(), maW.Value() - maB.Value());
+			Vector cb = dichotomie(c + Vector(0.0, 0.0, mcB.Value()), b + Vector(0.0, 0.0, mbB.Value()), mcW.Value() - mcB.Value(), mbW.Value() - mbB.Value());
 
-			triangleTerrain.append(c + Vector(0., 0., mcB.Value()));
+			triangleTerrain.append(c + Vector(0.0, 0.0, mcB.Value()));
 			triangleTerrain.append(ca);
 			triangleTerrain.append(cb);
 
 			triangleTerrain.append(ca);
-			triangleTerrain.append(a + Vector(0., 0., maB.Value()));
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
+			triangleTerrain.append(a + Vector(0.0, 0.0, maB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
 
 			triangleTerrain.append(ca);
-			triangleTerrain.append(b + Vector(0., 0., mbB.Value()));
+			triangleTerrain.append(b + Vector(0.0, 0.0, mbB.Value()));
 			triangleTerrain.append(cb);
 
 			count += 3;
 			count += 3;
 			triangleWater.append(ca);
-			triangleWater.append(a + Vector(0., 0., maW.Value()));
-			triangleWater.append(b + Vector(0., 0., mbW.Value()));
+			triangleWater.append(a + Vector(0.0, 0.0, maW.Value()));
+			triangleWater.append(b + Vector(0.0, 0.0, mbW.Value()));
 
 			triangleWater.append(ca);
-			triangleWater.append(b + Vector(0., 0., mbW.Value()));
+			triangleWater.append(b + Vector(0.0, 0.0, mbW.Value()));
 			triangleWater.append(cb);
 		}
 		if (count > 0)
@@ -382,8 +385,8 @@ public class ArchesTree
 
   //int r = ra.Uniform(100) + 1;    // Nb Aléatoire
 
-  //int tree1 = vsa.Tree1()*100.0; // Densité de type1
-  ///*int tree2 = vsa.Tree2()*100.0; // Densité de type2
+  //int tree1 = vsa.Tree1()*10.00; // Densité de type1
+  ///*int tree2 = vsa.Tree2()*10.0; // Densité de type2
   //int tree3 = vsa.Tree3()*100.0; // Densité de type3
   //*/
   //// Instances hors de l'eau
@@ -453,14 +456,14 @@ void generateVegetationNode(/*const*/ ref Box2 box)
             for (int k = 0; k < tile.size(); k++)
             {
                 Vector pos = Vector(i + tile[k][0] * tileSize1, j + tile[k][1] * tileSize1, 0.0);
-                double tub = tutu3.At(pos / 2.);
+                double tub = tutu3.At(pos / 2.0);
                 if (tub < 0.5)
                 {
-                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4., 1.0, 0.2, 0.0, 0.0));
+                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4.0, 1.0, 0.2, 0.0, 0.0));
                 }
                 else
                 {
-                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4., 1.0, 0.8, 0.0, 0.0));
+                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4.0, 1.0, 0.8, 0.0, 0.0));
                 }
             }
         }
@@ -475,9 +478,9 @@ void generateVegetationNode(/*const*/ ref Box2 box)
             {
                 Vector2 pos = Vector2(i + tile[k][0] * tileSize2, j + tile[k][1] * tileSize2);
                 ScalarAlpha msa = water->ElevationAlpha(pos);
-                if (msa.Value() > 0.)
+                if (msa.Value() > 0.0)
                 {
-                    VNS2.append(new VegetationDisc(pos, tileSize2 * 10., 1.0, 0.0, 0.2, 0.7));
+                    VNS2.append(new VegetationDisc(pos, tileSize2 * 10.0, 1.0, 0.0, 0.2, 0.7));
                 }
             }
         }
@@ -509,14 +512,14 @@ void generateVegetationNodeCanyon(/*const*/ ref Box2 box)
             for (int k = 0; k < tile.size(); k++)
             {
                 Vector pos = Vector(i + tile[k][0] * tileSize1, j + tile[k][1] * tileSize1, 0.0);
-                double tub = tutu3.At(pos / 2.);
+                double tub = tutu3.At(pos / 2.0);
                 if (tub < 0.5)
                 {
-                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4., 1.0, 0.002, 0.1, 0.0));
+                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4.0, 1.0, 0.002, 0.1, 0.0));
                 }
                 else
                 {
-                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4., 1.0, 0.01, 0.1, 0.0));
+                    VNS1.append(new VegetationDisc(pos, tileSize1 * 4.0, 1.0, 0.01, 0.1, 0.0));
                 }
             }
         }
@@ -531,9 +534,9 @@ void generateVegetationNodeCanyon(/*const*/ ref Box2 box)
             {
                 Vector pos = Vector(i + tile[k][0] * tileSize2, j + tile[k][1] * tileSize2, 0.0);
                 ScalarAlpha msa = water->ElevationAlpha(pos);
-                if (msa.Value() > 0.)
+                if (msa.Value() > 0.0)
                 {
-                    VNS2.append(new VegetationDisc(pos, tileSize2 * 10., 1.0, 0.0, 0.01, 0.05));
+                    VNS2.append(new VegetationDisc(pos, tileSize2 * 10.0, 1.0, 0.0, 0.01, 0.05));
                 }
             }
         }
@@ -558,7 +561,7 @@ int miny = min(box[0][1], box[1][1]);
 int maxy = max(box[0][1], box[1][1]);
 
 // Vegetation
-Vector p(0, 0, 0);
+Vector p= new Vector(0,0,0);
 MayaMaterial moTree2 = MayaMaterial(ShaderPhong, Color(0.3, 0.6, 0.3, 1.0), Color(0.2, 0.6, 0.2, 1.0), Color(0.1, 0.1, 0.1, 1.0), 50.0);
 
 int pas = 5;
@@ -587,7 +590,7 @@ int t = GetInstancesTree(p, randomTree);
           mia.Append(* mis);
           break;
         case 3:
-          mis = new MayaInstanceSet("Willow_Spring_V3", FrameScaled(m, p - Vector(0., 0., 0.4), Vector(0.5 + randomScale.Uniform(-0.05, 2.0))), moTree2);
+          mis = new MayaInstanceSet("Willow_Spring_V3", FrameScaled(m, p - Vector(0.0, 0.0, 0.4), Vector(0.5 + randomScale.Uniform(-0.05, 2.0))), moTree2);
           mia.Append(* mis);
           break;
         }
@@ -615,7 +618,7 @@ int t = GetInstancesSmallVeg(p, randomTree);
           mia.Append(* mis);
           break;
         case 3:
-          mis = new MayaInstanceSet("nenu", FrameScaled(m, p - Vector(0., 0., 0.4), Vector(0.5 + randomScale.Uniform(-0.05, 2.0))), moTree2);
+          mis = new MayaInstanceSet("nenu", FrameScaled(m, p - Vector(0.0, 0.0, 0.4), Vector(0.5 + randomScale.Uniform(-0.05, 2.0))), moTree2);
           mia.Append(* mis);
           break;
         }
