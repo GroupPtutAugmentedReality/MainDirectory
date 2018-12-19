@@ -1,0 +1,11 @@
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\bin\Debug\netcoreapp2.1\ptut2.deps.json
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\bin\Debug\netcoreapp2.1\ptut2.runtimeconfig.json
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\bin\Debug\netcoreapp2.1\ptut2.runtimeconfig.dev.json
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\bin\Debug\netcoreapp2.1\ptut2.dll
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\bin\Debug\netcoreapp2.1\ptut2.pdb
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\obj\Debug\netcoreapp2.1\ptut2.csprojAssemblyReference.cache
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\obj\Debug\netcoreapp2.1\ptut2.csproj.CoreCompileInputs.cache
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\obj\Debug\netcoreapp2.1\ptut2.AssemblyInfoInputs.cache
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\obj\Debug\netcoreapp2.1\ptut2.AssemblyInfo.cs
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\obj\Debug\netcoreapp2.1\ptut2.dll
+D:\PtutTanslated\PtutTanslated\ptut2\ptut2\obj\Debug\netcoreapp2.1\ptut2.pdb
