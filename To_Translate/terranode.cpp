@@ -79,6 +79,7 @@ Vector2 TerraNode::Gradient(const Vector2& p) const
 Vector TerraNode::Normal(const Vector2& p) const
 {
   return Normalized(Gradient(p).ToVector(1.0));
+  Vector2 a = new Vector2(1, 2);
 }
 
 /*!

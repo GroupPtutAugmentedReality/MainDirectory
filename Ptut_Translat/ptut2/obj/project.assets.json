@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PtutTanslated\\PtutTanslated\\ptut2\\ptut2\\ptut2.csproj",
+      "projectUniqueName": "D:\\PtutTanslated\\PtutTanslated\\Ptut_Translat\\ptut2\\ptut2.csproj",
       "projectName": "ptut2",
-      "projectPath": "D:\\PtutTanslated\\PtutTanslated\\ptut2\\ptut2\\ptut2.csproj",
+      "projectPath": "D:\\PtutTanslated\\PtutTanslated\\Ptut_Translat\\ptut2\\ptut2.csproj",
       "packagesPath": "C:\\Users\\yann\\.nuget\\packages\\",
-      "outputPath": "D:\\PtutTanslated\\PtutTanslated\\ptut2\\ptut2\\obj\\",
+      "outputPath": "D:\\PtutTanslated\\PtutTanslated\\Ptut_Translat\\ptut2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -4,16 +4,16 @@ using System.Text;
 
 namespace ptut2
 {
-    class Scalaralpha
+    class ScalarAlpha
     {
         protected double value;
         protected double alpha;
 
-        public Scalaralpha() {
+        public ScalarAlpha() {
             alpha = 0.0;
             value = 0.0;
         }
-        public Scalaralpha( double x,  double a)
+        public ScalarAlpha( double x,  double a)
         {
             value = x;
             alpha = a;
@@ -35,7 +35,7 @@ namespace ptut2
         {
             return this.alpha;
         }
-        public static bool operator !=(Scalaralpha ms,Scalaralpha msa)
+        public static bool operator !=(ScalarAlpha ms,ScalarAlpha msa)
         {
             if (ms.value != msa.value)
             {
@@ -44,24 +44,24 @@ namespace ptut2
             else
                 return false;
         }
-        public static bool operator ==( Scalaralpha ms,Scalaralpha msa)
+        public static bool operator ==( ScalarAlpha ms,ScalarAlpha msa)
         {
             if (ms.value == msa.value)
                 return true;            
             else
                 return false;
         }
-        public static Scalaralpha operator +(Scalaralpha ms,Scalaralpha msa)
+        public static ScalarAlpha operator +(ScalarAlpha ms,ScalarAlpha msa)
         {
-            return new Scalaralpha(ms.value + msa.value, ms.alpha + msa.alpha);
+            return new ScalarAlpha(ms.value + msa.value, ms.alpha + msa.alpha);
         }
-        public static Scalaralpha operator -(Scalaralpha ms, Scalaralpha msa)
+        public static ScalarAlpha operator -(ScalarAlpha ms, ScalarAlpha msa)
         {
-            return new Scalaralpha(ms.value - msa.value, ms.alpha - msa.alpha);
+            return new ScalarAlpha(ms.value - msa.value, ms.alpha - msa.alpha);
         }
-        public static Scalaralpha operator *(Scalaralpha ms,Scalaralpha  msa)
+        public static ScalarAlpha operator *(ScalarAlpha ms,ScalarAlpha  msa)
         {
-            return new Scalaralpha(ms.value * msa.value, ms.alpha * msa.alpha);
+            return new ScalarAlpha(ms.value * msa.value, ms.alpha * msa.alpha);
         }
 
         public override string ToString() {
