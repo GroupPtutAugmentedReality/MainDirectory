@@ -4,7 +4,8 @@ using System.Text;
 
 namespace ptut2
 {
-    class TreeArches
+    class TerraUnary : TerraNode
     {
+        TerraNode node
     }
 }

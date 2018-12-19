@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
@@ -6,17 +6,12 @@ using System.Text;
 
 namespace ptut2
 {
-	class TerraNode
+    class TerraNode
     {
+        public TerraNode() { }
 
-
-		protected const double epsilon =1e-2;
+        protected const double epsilon =1e-2;
         // voir box 2 c++
-		public TerraNode()
-		{
-
-		}
-
         Vector2 Gradient(/*const*/  Vector2 p) /*const*/
         {
             float x =(float)(Elevation((new Vector2((float)(p.X + epsilon),p.Y))) - Elevation( (new Vector2( (float)(p.X + epsilon), p.Y))));

@@ -9,15 +9,19 @@ namespace ptut2
 	{
 		List<TerraNode> nodes;
 
-		public TerraOperator(TerraNode a, TerraNode b, TerraNode c, TerraNode d)
+		public TerraOperator(TerraNode a, TerraNode b, TerraNode c, TerraNode d):base()
 		{
 			nodes.Add(a);
 			if (b != null) nodes.Add(b);
 			if (c != null) nodes.Add(c);
 			if (d != null) nodes.Add(d);
 		}
+        public TerraOperator(List<TerraNode> node):base()
+        {
+            this.nodes = node;
+        }
 
-		protected abstract ScalarAlpha ElevationAlpha(ref Vector2 vec);
+        protected abstract ScalarAlpha ElevationAlpha(ref Vector2 vec);
 
 
 	}
