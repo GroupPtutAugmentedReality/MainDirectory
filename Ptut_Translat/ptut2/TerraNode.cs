@@ -43,7 +43,7 @@ namespace ptut2
 
         \param p Point.
         */
-        ScalarAlpha ElevationAlpha(/*const*/ ref Vector2 p) /*const*/
+        public ScalarAlpha ElevationAlpha(/*const*/ ref Vector2 p) /*const*/
         {
             return new ScalarAlpha(0.0, 1.0);
         }

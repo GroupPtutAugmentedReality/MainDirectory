@@ -7,7 +7,7 @@ namespace ptut2
 {
 	abstract class TerraOperator : TerraNode
 	{
-		List<TerraNode> nodes;
+	    protected List<TerraNode> nodes;
 
 		public TerraOperator(TerraNode a, TerraNode b, TerraNode c, TerraNode d):base()
 		{
