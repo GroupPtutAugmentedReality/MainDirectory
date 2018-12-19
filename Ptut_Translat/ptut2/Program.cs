@@ -6,7 +6,7 @@ namespace ptut2
     {
         static void Main(string[] args)
         {
-            Scalaralpha a = new Scalaralpha(1.215, 54);
+            ScalarAlpha a = new ScalarAlpha(1.215, 54);
             Console.WriteLine("hello");
             Console.WriteLine(a);
             Console.Read();
