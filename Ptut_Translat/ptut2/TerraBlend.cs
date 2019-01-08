@@ -13,8 +13,9 @@ namespace ptut2
         }
         public TerraBlend(TerraNode a, TerraNode b,TerraNode c,TerraNode d) : base(a,b,c,d)
         {
-
+           
         }
+       
 
         protected override ScalarAlpha ElevationAlpha(ref Vector2  vec)
         {

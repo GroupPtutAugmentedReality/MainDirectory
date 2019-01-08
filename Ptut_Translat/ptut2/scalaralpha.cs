@@ -2,71 +2,107 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ptut2
+namespace ptut2.Properties
 {
     class ScalarAlpha
     {
-        protected double value;
-        protected double alpha;
+        protected double value; //!< Real.
+        protected double alpha; //!< Alpha.
+        //static const ScalarAlpha Empty = new ScalarAlpha(0.0,0.0); //!< Empty value and weight
 
-        public ScalarAlpha() {
-            alpha = 0.0;
+        /*!
+        \brief Empty refructor.
+        */
+        public ScalarAlpha(){
             value = 0.0;
+            alpha = 0.0;
         }
-        public ScalarAlpha( double x,  double a)
-        {
+
+        /*!
+        \brief refructor.
+        \param x Real.
+        \param a Alpha.
+        */
+        public ScalarAlpha(ref double x,  ref double na){
             value = x;
             alpha = a;
         }
 
-        public void setValue(double x)
-        {
-            this.value = x;
+        /*!
+        \brief Return the height value.
+        */
+        public double Value(){
+            return value;
         }
-        public double getValue()
-        {
-            return this.value;
+
+        /*!
+        \brief Return the alpha value.
+        */
+        public double Alpha(){
+             return alpha;
         }
-        public void setAlpha(double x)
+
+        /*!
+        \brief Set material layer thickness.
+        \param v Value.
+        */
+        public void ScalarAlpha(ref double v)
         {
-            this.alpha = x;
+            value = v;
         }
-        public double getAlpha()
+
+        /*!
+        \brief Set alpha layer value.
+        \param a Alpha coefficient.
+        */
+        public void SetAlpha(ref double a)
         {
-            return this.alpha;
+            alpha = a;
         }
-        public static bool operator !=(ScalarAlpha ms,ScalarAlpha msa)
+
+
+        public ScalarAlpha operator +(ref ScalarAlpha msa)
         {
-            if (ms.value != msa.value)
-            {
+            return ScalarAlpha(value + msa.value, alpha + msa.alpha);
+        }
+
+        public ScalarAlpha operator -(ref ScalarAlpha msa)
+        {
+            return ScalarAlpha(value - msa.value, alpha - msa.alpha);
+        }
+
+
+
+
+        public bool operator!=(ref ScalarAlpha msa)
+        {
+            if (value != msa.value)
                 return true;
-            }
             else
                 return false;
         }
-        public static bool operator ==( ScalarAlpha ms,ScalarAlpha msa)
+
+        public bool operator==(ref ScalarAlpha msa)
         {
-            if (ms.value == msa.value)
-                return true;            
+            if (value == msa.value)
+                return true;
             else
                 return false;
         }
-        public static ScalarAlpha operator +(ScalarAlpha ms,ScalarAlpha msa)
+
+        public ScalarAlpha operator+=(ref ScalarAlpha msa)
         {
-            return new ScalarAlpha(ms.value + msa.value, ms.alpha + msa.alpha);
-        }
-        public static ScalarAlpha operator -(ScalarAlpha ms, ScalarAlpha msa)
-        {
-            return new ScalarAlpha(ms.value - msa.value, ms.alpha - msa.alpha);
-        }
-        public static ScalarAlpha operator *(ScalarAlpha ms,ScalarAlpha  msa)
-        {
-            return new ScalarAlpha(ms.value * msa.value, ms.alpha * msa.alpha);
+            return ScalarAlpha(value + msa.value, alpha + msa.alpha);
         }
 
-        public override string ToString() {
-            return "value : " + value + " Alpha : " + alpha;
+        public ScalarAlpha operator *(ref double a)
+        {
+            return ScalarAlpha(value * a, alpha * a);
         }
 
+        public ScalarAlpha operator*=(ref double a)
+        {
+            return ScalarAlpha(value * a, alpha * a);
+        }
     }
 }

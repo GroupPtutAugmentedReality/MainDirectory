@@ -7,4 +7,5 @@ namespace ptut2
 	class Box2
 	{
 	}
+
 }
