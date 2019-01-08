@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ptut2.Properties
+namespace ptut2
 {
     class ScalarAlpha
     {
@@ -74,7 +74,7 @@ namespace ptut2.Properties
 
 
 
-        public bool operator!=(ref ScalarAlpha msa)
+       /* public bool operator!=(ref ScalarAlpha msa)
         {
             if (value != msa.value)
                 return true;
@@ -103,6 +103,6 @@ namespace ptut2.Properties
         public ScalarAlpha operator*=(ref double a)
         {
             return ScalarAlpha(value * a, alpha * a);
-        }
+        }*/
     }
 }

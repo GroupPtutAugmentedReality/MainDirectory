@@ -13,17 +13,17 @@ namespace ptut2
         }
         public TerraBlend(TerraNode a, TerraNode b,TerraNode c,TerraNode d) : base(a,b,c,d)
         {
-           
+      
         }
        
 
-        protected override ScalarAlpha ElevationAlpha(ref Vector2  vec)
+        protected override ScalarAlpha ElevationAlpha(ref Vector2 vec)
         {
             double w = 0.0;
             double hr = 0.0;
 
             double wi, hri;
-            for(int i = 0; i < this.nodes.Count; i++)
+            for(int i = 0; i < nodes.Count; i++)
             {
                 ScalarAlpha sss = nodes[i].ElevationAlpha(ref vec);
                 wi = sss.getAlpha();
@@ -45,7 +45,18 @@ namespace ptut2
 
         //fonction draw non nessecaire fait en c++ avec qt;
 
+        int Traversal(ref Vector2 p)
+        {
+          int n = 1;
+          if (!box666.Inside(p))
+            return n;
 
+          for (int i = 0; i<nodes.size(); i++)
+          {
+            n += nodes.at(i)->Traversal(p);
+          }
+          return n;
+        }
 
     }
 }

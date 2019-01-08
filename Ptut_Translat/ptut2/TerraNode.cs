@@ -8,10 +8,43 @@ namespace ptut2
 {
     class TerraNode
     {
-        public TerraNode() { }
-
-        protected const double epsilon =1e-2;
         // voir box 2 c++
+        protected Box2 box666 = new Box2();//Classe Box2 Vide !!
+        protected const double epsilon = 1e-2;
+
+        //Empty constructor
+        public TerraNode() {}
+
+
+        /*!
+        \brief Create a node.
+        \param box The box.
+        */
+        public TerraNode(ref Box2 box)
+        {
+            box666 = box;
+        }
+
+
+        /*!
+        \brief Returns the bouding box of a node.
+        */
+        Box2 GetBox()
+        {
+            return box666;
+        }
+
+        /*!
+        \brief Compute the number of nodes that are traversed when evaluating the tree.
+        \param p Point.
+        */
+        int Traversal(ref Vector2 p)
+        {
+            return 1;
+        }
+
+
+
         Vector2 Gradient(/*const*/  Vector2 p) /*const*/
         {
             float x =(float)(Elevation((new Vector2((float)(p.X + epsilon),p.Y))) - Elevation( (new Vector2( (float)(p.X + epsilon), p.Y))));
