@@ -29,7 +29,7 @@ namespace ptut2
         /*!
         \brief Returns the bouding box of a node.
         */
-        Box2 GetBox()
+       public Box2 GetBox()
         {
             return box666;
         }
@@ -38,7 +38,7 @@ namespace ptut2
         \brief Compute the number of nodes that are traversed when evaluating the tree.
         \param p Point.
         */
-        int Traversal(ref Vector2 p)
+       public  int Traversal(ref Vector2 p)
         {
             return 1;
         }

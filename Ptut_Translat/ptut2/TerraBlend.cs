@@ -45,15 +45,15 @@ namespace ptut2
 
         //fonction draw non nessecaire fait en c++ avec qt;
 
-        int Traversal(ref Vector2 p)
+        public int Traversal(ref Vector2 p)
         {
           int n = 1;
-          if (!box666.Inside(p))
+          if (!box666.inTheBox(p.X,p.Y))
             return n;
 
-          for (int i = 0; i<nodes.size(); i++)
+          for (int i = 0; i<nodes.Count; i++)
           {
-            n += nodes.at(i)->Traversal(p);
+            n += nodes[i].Traversal(ref p);
           }
           return n;
         }
