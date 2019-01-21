@@ -23,32 +23,32 @@ namespace ptut2
         \param x Real.
         \param a Alpha.
         */
-        public ScalarAlpha(ref double x,  ref double na){
+        public ScalarAlpha( double x,  double na){
             value = x;
-            alpha = a;
+            alpha = na;
         }
 
         /*!
         \brief Return the height value.
         */
         public double Value(){
-            return value;
+            return this.value;
         }
 
         /*!
         \brief Return the alpha value.
         */
         public double Alpha(){
-             return alpha;
+             return this.alpha;
         }
 
         /*!
         \brief Set material layer thickness.
         \param v Value.
         */
-        public void ScalarAlpha(ref double v)
+        public void SetValue(ref double v)
         {
-            value = v;
+            this.value = v;
         }
 
         /*!
@@ -57,52 +57,44 @@ namespace ptut2
         */
         public void SetAlpha(ref double a)
         {
-            alpha = a;
+            this.alpha = a;
         }
 
 
-        public ScalarAlpha operator +(ref ScalarAlpha msa)
+        public static ScalarAlpha operator +(ScalarAlpha ms,ScalarAlpha msa)
         {
-            return ScalarAlpha(value + msa.value, alpha + msa.alpha);
+            ScalarAlpha s = new ScalarAlpha(ms.value + msa.value, ms.alpha + msa.alpha);
+            return s;
         }
 
-        public ScalarAlpha operator -(ref ScalarAlpha msa)
+        public static ScalarAlpha operator -(ScalarAlpha ms, ScalarAlpha msa)
         {
-            return ScalarAlpha(value - msa.value, alpha - msa.alpha);
+            ScalarAlpha s = new ScalarAlpha(ms.value - msa.value, ms.alpha - msa.alpha);
+            return s;
         }
 
 
 
 
-       /* public bool operator!=(ref ScalarAlpha msa)
+        public static bool operator!=( ScalarAlpha ms, ScalarAlpha msa)
         {
-            if (value != msa.value)
+            if (ms.value != msa.value)
                 return true;
             else
                 return false;
         }
 
-        public bool operator==(ref ScalarAlpha msa)
+        public static bool operator==(ScalarAlpha ms, ScalarAlpha msa)
         {
-            if (value == msa.value)
+            if (ms.value == msa.value)
                 return true;
             else
                 return false;
         }
-
-        public ScalarAlpha operator+=(ref ScalarAlpha msa)
+        public static ScalarAlpha operator *(ScalarAlpha s, double a)
         {
-            return ScalarAlpha(value + msa.value, alpha + msa.alpha);
+            return new ScalarAlpha(s.value * a, s.alpha * a);
         }
 
-        public ScalarAlpha operator *(ref double a)
-        {
-            return ScalarAlpha(value * a, alpha * a);
-        }
-
-        public ScalarAlpha operator*=(ref double a)
-        {
-            return ScalarAlpha(value * a, alpha * a);
-        }*/
     }
 }
