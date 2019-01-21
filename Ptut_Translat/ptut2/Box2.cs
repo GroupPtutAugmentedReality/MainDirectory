@@ -23,29 +23,6 @@ namespace ptut2
 
 		public Box2(Box2 b1, Box2 b2)
 		{
-			if (b1.inTheBox(b2.x1, b2.y1))
-			{
-				if (b1.inTheBox(b2.x2, b2.y2))
-				{
-					this.x1 = b1.x1;
-					this.x2 = b1.x2;
-					this.y1 = b1.y1;
-					this.y2 = b1.y2;
-				}
-
-			}
-			else if (b2.inTheBox(b1.x1, b1.y1))
-			{
-				if (b2.inTheBox(b1.x2, b1.y2))
-				{
-					this.x1 = b2.x1;
-					this.x2 = b2.x2;
-					this.y1 = b2.y1;
-					this.y2 = b2.y2;
-				}
-			}
-			else
-			{
 				double lowestCoordX, lowestCoordY;
 
 				lowestCoordX = Math.Min(b1.x1, b1.x2);
@@ -67,8 +44,6 @@ namespace ptut2
 				highestCoordY = Math.Max(highestCoordY, b2.x2);
 
 				Box2 tmp = new Box2(lowestCoordX, lowestCoordY, highestCoordX, highestCoordY);
-
-			}
 		}
 
 		public bool inTheBox(double x, double y)
