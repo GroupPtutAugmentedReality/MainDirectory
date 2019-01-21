@@ -31,14 +31,14 @@ namespace ptut2
         /*!
         \brief Return the height value.
         */
-        public double Value(){
+        public double getValue(){
             return this.value;
         }
 
         /*!
         \brief Return the alpha value.
         */
-        public double Alpha(){
+        public double getAlpha(){
              return this.alpha;
         }
 
