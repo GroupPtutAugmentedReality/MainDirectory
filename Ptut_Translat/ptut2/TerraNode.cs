@@ -64,13 +64,13 @@ namespace ptut2
             /**
              * TODO:Vefrifier que la fonction n'est pas nessecaire .
              * 
-             * /
-           
-       // Vector Normal(/*const*/// Vector2 p) /*const*/
-       // {
-       //     return Vector(Vector2.Normalize(Gradient(p));
-       // }
-
+             * /*
+           *//*
+       ArrayList Normal(const Vector2 p) //vector transformé en ArrayList
+        {
+           return Vector(Vector2.Normalize(Gradient(p));
+        }
+    */
         /*!
         \brief Compute the elevation and weight.
 
@@ -102,11 +102,18 @@ namespace ptut2
         /*!
         \brief Compute the size of a node.
         */
-       /* int Memory() 
-        {
-            return sizeof(TerraNode);
-        }
+        /* int Memory() 
+         {
+             return sizeof(TerraNode);
+         }
 
-        */
+         */
+
+
+        //void TerraNode::setTime(double t)
+        //{
+        //
+        //}
+
     }
 }
