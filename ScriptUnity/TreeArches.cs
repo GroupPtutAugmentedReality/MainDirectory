@@ -7,6 +7,13 @@ namespace ptut2
 {
     class TreeArches : MonoBehaviour
     {
+		//variables Unity (position Box)
+		double x1;
+		double y1;
+		double x2;
+		double y2;
+		//
+
         List<TerraNode> bedrock;
         /*TerraNode* water; //!< Water.
         TerraNode* foam;
@@ -14,10 +21,9 @@ namespace ptut2
         VegetationNode* veg_root;
          */
 
-        public TreeArches(ref TerraNode ter)
+        public TreeArches(List<TerraNode> ter)
         {
-            bedrock = new List<TerraNode>();
-            bedrock.Add(ter);
+			bedrock = ter;
             /*
                 water = w;
                 sand = s;
@@ -45,21 +51,35 @@ namespace ptut2
 
         void Start()
         {
-            bedrock.Add(new TerraNode(new  Box2(0.0,2.0,0.0,2.0)));
+			//On calcule les coordonnees x1,y1 et x2,y2 de la box de l'objet
+			x1 = this.gameObject.transform.position.x - this.gameObject.GetComponent<BoxCollider> ().size.x;
+			y1 = this.gameObject.transform.position.z + this.gameObject.GetComponent<BoxCollider> ().size.z;
+			x2 = this.gameObject.transform.position.x + this.gameObject.GetComponent<BoxCollider> ().size.x;
+			y2 = this.gameObject.transform.position.z - this.gameObject.GetComponent<BoxCollider> ().size.z;
+			Debug.Log ("x1 : " + x1); 
+			Debug.Log ("y1 : " + y1);
+			Debug.Log ("x2 : " + x2);
+			Debug.Log ("y2 : " + y2);
+            bedrock.Add(new TerraNode(new  Box2(x1,x2,y1,y2)));
         }
 
         // Update is called once per frame
         void Update()
-        {
-            for(int i = 0; i < this.bedrock.Count; i++)
-            {
-             
-                Console.WriteLine(this.bedrock[i].GetBox().x2);
-                Console.WriteLine(this.bedrock[i].GetBox().y1);
-                Console.WriteLine(this.bedrock[i].GetBox().y2);
-
-                Debug.Log(this.bedrock[i].GetBox().x1);
-            }
+        {	
+			x1 = this.gameObject.transform.position.x - this.gameObject.GetComponent<BoxCollider> ().size.x;
+			y1 = this.gameObject.transform.position.z + this.gameObject.GetComponent<BoxCollider> ().size.z;
+			x2 = this.gameObject.transform.position.x + this.gameObject.GetComponent<BoxCollider> ().size.x;
+			y2 = this.gameObject.transform.position.z - this.gameObject.GetComponent<BoxCollider> ().size.z;
+			bedrock [0].GetBox ().setBox2 (x1, x2, y2, y2);
         }
+
+		void OnMouseDown(){
+			Debug.Log("x1 : " + bedrock [0].GetBox ().x1);
+			Debug.Log("y1 : " + bedrock [0].GetBox ().y1);
+			Debug.Log("x2 : " + bedrock [0].GetBox ().x2);
+			Debug.Log("y2 : " + bedrock [0].GetBox ().y2);
+			Debug.Log ("POS X : " + this.gameObject.transform.position.x);
+			Debug.Log ("POS Z : " + this.gameObject.transform.position.z);
+		}
     }
 }

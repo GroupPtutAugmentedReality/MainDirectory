@@ -8,11 +8,13 @@ namespace ptut2
     class TerraNode : MonoBehaviour
     {
         // voir box 2 c++
-        protected Box2 box666 = new Box2();//Classe Box2 Vide !!
+		protected Box2 box666;//Classe Box2 Vide !!
         protected const double epsilon = 1e-2;
 
         //Empty constructor
-        public TerraNode() {}
+        public TerraNode() {
+			box666 = new Box2 ();
+		}
 
 
         /*!
